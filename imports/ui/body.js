@@ -30,16 +30,28 @@ Template.body.events({
   'submit .new-task'(event) {
     // Prevent default browser form submit
     event.preventDefault();
- 
+       
     // Get value from form element
     const target = event.target;
-    const text = target.text.value;
- 
-    // Insert a task into the collection
-     Meteor.call('tasks.insert', text);
- 
-    // Clear form
-    target.text.value = '';
+
+    let textArray = [];
+    let i=0;
+   /* while (target["text"+i] && target["text"+i].value !== ""){
+      textArray.push(target["text"+i].value);
+      target["text"+i].value = "";
+      i += 1;
+    }*/ 
+    while (target["text"+i]){
+      if(target["text"+i].value !== ""){
+        textArray.push(target["text"+i].value);
+        target["text"+i].value = "";
+      }
+      i += 1;
+    }
+    
+    _.each(textArray, function(element){
+      Meteor.call('tasks.insert', element);
+    });
   },
   
   'change .hide-completed input'(event, instance) {
