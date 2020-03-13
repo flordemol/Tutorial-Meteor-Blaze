@@ -56,6 +56,10 @@ form {
   width: 100%;
   padding-right: 80px;
   font-size: 1em;
+ }
+
+.new-task label {
+  font-size: 1em; 
 }
  
 .new-task input:focus{

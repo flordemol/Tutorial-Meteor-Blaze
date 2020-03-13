@@ -33,14 +33,32 @@ Template.body.events({
        
     // Get value from form element
     const target = event.target;
+    const usuario = {
+      nombre: target.nombre.value,
+      apellido: target.apellido.value,
+      dni: target.dni.value,
+      fechaNac: target.fechaNac.value,
+      telefono: target.telefono.value,
+    };
 
-    let textArray = [];
+    //console.log(target)
+    console.log(usuario)
+
+    Meteor.call('tasks.insert', usuario);
+
+    /*console.log(target.apellido.value)
+    console.log(target.dni.value)
+    console.log(target.fechaNac.value)
+    console.log(target.telefono.value)*/
+    
+   
+    /*let textArray = [];
     let i=0;
-   /* while (target["text"+i] && target["text"+i].value !== ""){
+    while (target["text"+i] && target["text"+i].value !== ""){
       textArray.push(target["text"+i].value);
       target["text"+i].value = "";
       i += 1;
-    }*/ 
+    }
     while (target["text"+i]){
       if(target["text"+i].value !== ""){
         textArray.push(target["text"+i].value);
@@ -51,7 +69,8 @@ Template.body.events({
     
     _.each(textArray, function(element){
       Meteor.call('tasks.insert', element);
-    });
+    });*/
+
   },
   
   'change .hide-completed input'(event, instance) {

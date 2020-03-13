@@ -12,11 +12,24 @@
 	   
 	   {{#if currentUser}}
         <form class="new-task">
-          <input type="text" name="text0" placeholder="Type to add new tasks" />
-          <input type="text" name="text1" placeholder="Type to add new tasks" />
-          <input type="text" name="text2" placeholder="Type to add new tasks" />
-          <input type="text" name="text3" placeholder="Type to add new tasks" />
-          <input type="text" name="text4" placeholder="Type to add new tasks" />
+          <label for="nombre" class="form_label">Nombre:</label>
+          <input type="text" name="nombre" placeholder="Ingrese Nombre" />
+          <br/>
+          <label for="apellido" class="form_label">Apellido:</label>
+          <input type="text" name="apellido" placeholder="Ingrese Apellido" />
+          <br/>
+          <label for="dni" class="form_label">DNI:</label>
+          <input type="text" name="dni" placeholder="Ingrese DNI" />
+          <br/>
+          <label for="fechaNac" class="form_label">Fecha de nacimiento:</label>
+          <input type="date" name="fechaNac" placeholder="Ingrese Fecha de nacimiento" />
+          <br/>
+          <label for="telefono" class="form_label">Teléfono:</label>
+          <input type="text" name="telefono" placeholder="Ingrese Teléfono" />
+          <br/>
+          <label for="sexo" class="form_label">Sexo:</label>
+          <input type="text" name="sexo" placeholder="Ingrese Sexo" />
+          <br/>
           <input type="submit"/>
         </form>
       {{/if}}
