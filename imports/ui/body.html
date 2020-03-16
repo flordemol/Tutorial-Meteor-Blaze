@@ -1,12 +1,14 @@
 <body>
   <div class="container">
     <header>
-      <h1>Todo List ({{incompleteCount}})</h1>
+      <h1>Contactos ({{incompleteCount}})</h1>
  
-	<label class="hide-completed">
-       <input type="checkbox" />
-        Hide Completed Tasks
-     </label>
+	<!-- Checkbox para mostrar tareas/contactos no seleccionados
+
+      <label class="hide-completed">
+      <input type="checkbox" />
+      Ocultar contacto seleccionado
+      </label> -->
 	  
 	   {{> loginButtons}}
 	   
@@ -30,15 +32,17 @@
           <label for="sexo" class="form_label">Sexo:</label>
           <input type="text" name="sexo" placeholder="Ingrese Sexo" />
           <br/>
-          <input type="submit"/>
+          <input type="submit" class="submit"/>
         </form>
       {{/if}}
     </header>
  
     <ul>
       {{#each tasks}}
-        {{> task}}
+           <!--  {{> task}}            Lista tareas-->
+          {{> tarjetaContacto}}
       {{/each}}
     </ul>
+   
   </div>
 </body>

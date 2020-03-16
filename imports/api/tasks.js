@@ -1,12 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
- 
+
 export const Tasks = new Mongo.Collection('tasks');
 
 if (Meteor.isServer) {
-  // This code only runs on the server
-   // Only publish tasks that are public or belong to the current user
+  // Este código solo se ejecuta en el servidor
+   // Solo publique tareas que sean públicas o pertenezcan al usuario actual
   Meteor.publish('tasks', function tasksPublication() {
    return Tasks.find({
       $or: [
@@ -21,11 +21,12 @@ Meteor.methods({
   'tasks.insert'(userData) {
     //check(text, String);
  
-    // Make sure the user is logged in before inserting a task
+    // Asegura que hay un usuario logueado para poder insertar tarea
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
  
+    // Nuevo bjeto con valores por defecto al enviar formulario
     const defaultValue = {
       createdAt: new Date(),
       owner: Meteor.userId(),

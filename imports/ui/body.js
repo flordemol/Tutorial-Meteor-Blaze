@@ -5,6 +5,7 @@ import { Tasks } from '../api/tasks.js';
  
 import './task.js';
 import './body.html';
+import './contact.js'; //sacar
  
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
@@ -23,15 +24,16 @@ Template.body.helpers({
   },
    incompleteCount() {
     return Tasks.find({ checked: { $ne: true } }).count();
-  },
+  },    
 });
 
 Template.body.events({
   'submit .new-task'(event) {
-    // Prevent default browser form submit
+    // Evitar el envío predeterminado del formulario del navegador
     event.preventDefault();
        
-    // Get value from form element
+    // Obtener valor del elemento de formulario - Creo objeto "usuario"
+    // "event.target" para obtener el elemento que desencadenó un evento específico
     const target = event.target;
     const usuario = {
       nombre: target.nombre.value,
@@ -39,9 +41,11 @@ Template.body.events({
       dni: target.dni.value,
       fechaNac: target.fechaNac.value,
       telefono: target.telefono.value,
+      sexo: target.sexo.value,
     };
+   
 
-    //console.log(target)
+    //imprime por consola el objeto "usuario"
     console.log(usuario)
 
     Meteor.call('tasks.insert', usuario);

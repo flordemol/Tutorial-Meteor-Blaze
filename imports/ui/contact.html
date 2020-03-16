@@ -1,7 +1,23 @@
-<div class="card">
-    <img src="img_avatar.png" alt="Avatar" style="width:100%">
-    <div class="container">
-      <h4><b>John Doe</b></h4>
-      <p>Architect & Engineer</p>
-    </div>
+<!-- Plantilla de tarjeta de contacto -->
+<template name="tarjetaContacto">
+  
+  <div class="avatarFoto">
+   <!--  ¿¿como pongo condicional?? 
+        ¿¿Cómo se escribe la ruta de la img?? -->
+    <img src="/public/img_avatarM.png" alt='mujer'/>
+    <img src="/public/img_avatarH.png" alt='hombre'/>
   </div>
+
+<!-- Botón para eliminar tarjeta -->
+<button class="delete">&times;</button>
+
+<!-- Datos de contacto -->
+<div class="contenedor">
+      <h4><b>{{apellido}}, {{nombre}}</b></h4>
+      <p>DNI: {{dni}}</p>
+      <p>Fecha Nacimiento: {{fechaNac}}</p>
+      <p>Teléfono: {{telefono}}</p>
+      <p>Sexo: {{sexo}}</p>
+  </div>
+
+</template>

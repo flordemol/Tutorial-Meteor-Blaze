@@ -32,14 +32,17 @@ header {
  
 #login-buttons {
   display: block;
+  float: right;
+  
 }
  
 h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   margin: 0;
   margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
+  text-decoration: underline;
 }
  
 form {
@@ -52,14 +55,15 @@ form {
   box-sizing: border-box;
   padding: 10px 0;
   background: transparent;
-  border: none;
+  border-style: solid blue;
   width: 100%;
   padding-right: 80px;
   font-size: 1em;
  }
 
 .new-task label {
-  font-size: 1em; 
+  font-size: 1.2em; 
+  font-weight: bold;
 }
  
 .new-task input:focus{
@@ -70,17 +74,23 @@ ul {
   margin: 0;
   padding: 0;
   background: white;
+  display: block;
 }
  
 .delete {
   float: right;
-  font-weight: bold;
   background: none;
-  font-size: 1em;
+  font-size: 2em;
   border: none;
   position: relative;
+  display: block;
 }
  
+.submit {
+  font-weight: bold;
+  background-color: lightslategray;
+}
+
 li {
   position: relative;
   list-style: none;
@@ -127,3 +137,28 @@ header .hide-completed {
     padding-bottom: 5px;
   }
 }
+
+.contenedor {
+  padding: 1px 16px;
+  margin-right: 0px;
+  border: rgb(146, 170, 194) solid 1px;
+}
+
+.contenedor h4 {
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.avatarFoto img {
+  width: 120px;
+  height: 175px;
+  margin: 0px; 
+}
+
+.avatarFoto  {
+  width: 120px;
+  height: 175px; 
+  float: left;
+  margin: 0px;; 
+  }
