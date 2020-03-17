@@ -21,10 +21,24 @@ Template.body.helpers({
     }
     // Otherwise, return all of the tasks
     return Tasks.find({}, { sort: { createdAt: -1 } });
+
   },
-   incompleteCount() {
+     incompleteCount() {
     return Tasks.find({ checked: { $ne: true } }).count();
-  },    
+  }, 
+  
+  // ESTE CÓDIGO ERA ES EL QUE CAMBIÉ DE LUGAR. 
+  // AL UBICARLO ACÁ YA NO RECONOCE target.sexo.value
+  txtAvatar(){
+    let txtAvatar = "sin info";
+    if(target.sexo.value === "Mujer"){
+      return txtAvatar ="img/img_avatarM.png";
+    } else if(target.sexo.value === "Hombre") {
+     return txtAvatar ="img/img_avatarH.png";
+    } 
+    console.log(txtAvatar)  
+  }
+ 
 });
 
 Template.body.events({
@@ -50,6 +64,7 @@ Template.body.events({
 
     Meteor.call('tasks.insert', usuario);
 
+    
     /*console.log(target.apellido.value)
     console.log(target.dni.value)
     console.log(target.fechaNac.value)

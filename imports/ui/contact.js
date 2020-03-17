@@ -5,6 +5,7 @@ import { Template } from 'meteor/templating';
 
 import './contact.html';
 
+
 Template.tarjetaContacto.events({
   
     'click .delete'() {
