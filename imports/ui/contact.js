@@ -14,3 +14,14 @@ Template.tarjetaContacto.events({
   },
 });
   
+Template.tarjetaContacto.helpers({
+  txtAvatar(sexo) {
+      
+    if(sexo === "Mujer"){
+      return txtAvatar ="img/img_avatarM.png";
+    } else {
+     return txtAvatar ="img/img_avatarH.png";
+    } 
+  },
+  
+});
